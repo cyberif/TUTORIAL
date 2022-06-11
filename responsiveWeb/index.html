@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB RESPONSIVE</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <nav>
+        <div class="brand">
+            <p>azzah rifqi</p>
+        </div>
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">portofolio</a></li>
+            <li><a href="#">gallery</a></li>
+            <li><a href="#">about</a></li>
+        </ul>
+        <div class="humberg">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="isi"></div>
+</body>
+<script>
+    const humberg = document.querySelector('.humberg');
+    const nav = document.querySelector('nav ul');
+
+    humberg.addEventListener('click', function(){
+        nav.classList.toggle('slide');
+    });
+</script>
+</html>

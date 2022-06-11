@@ -1,0 +1,215 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Russo+One&display=swap');
+@keyframes  pelangi{
+    0%{color:  #FF0000;}
+    17%{color: #FF7F00;}
+    36%{color:  #FFFF00;}
+    52%{color: #00FF00;}
+    65%{color:  #0000FF;}
+    83%{color:  #4B0082;}
+    100%{color:   #9400D3;}
+}
+
+@keyframes hati {
+    0%{
+        transform: scale(1);
+    }
+
+    90%{
+        transform: scale(1.03);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.brand{
+    margin-left: 8vh;
+    /* color: rgb(255, 210, 86); */   
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    font-size: 1em;
+    
+
+}
+
+.brand>p{
+    color: #A9CEC2;
+    font-size: 1.6em;
+    font-weight: 700;
+    animation-name: pelangi;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 9vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#222222;
+    /* background-color: #222; */
+    /* background-color: rgb(24, 66, 66); */
+    /* background: radial-gradient(circle at top left, #004DFF,#FF2A8F);    */
+    align-items: center;
+    box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.849);
+
+}
+
+nav>ul{
+    margin-right: 3vh;
+    list-style: none;
+    display: flex;
+    width: 40%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav>ul>li>a{
+    font-family: 'Patrick Hand', cursive;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #A9CEC2;
+    text-decoration: none;
+    letter-spacing: 1px;
+    cursor: none;
+}
+
+nav>ul>li>a:hover{
+    animation-name: pelangi;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transition: 0.3s;
+}
+
+/* .hati>img{
+    margin-left: 10vh;
+    padding-top: 20vh;
+    width: 40%;
+    height: 60vh;
+    animation-name: hati;
+    animation-duration: 0.6s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+} */
+
+/* humberg */
+.humberg{
+    margin-right: 3vh;
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    
+}
+
+.humberg input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -5.2px;
+    top: -4px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.humberg span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #A9CEC2;
+    border-radius: 3px;
+    transition: all 0.4s;
+}
+
+.humberg span:nth-child(2){
+    transform-origin:0 0 ;
+}
+
+.humberg span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.humberg input:checked ~ span:nth-child(2){
+    background-color: whitesmoke;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.humberg input:checked ~ span:nth-child(3){
+    transform: scale(0)
+}
+
+.humberg input:checked ~ span:nth-child(4){
+    background-color: whitesmoke;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+/* ISI */
+.isi{
+    background-color: #FBB666;
+    width: 100%;
+    height: 100vh;
+}
+
+/* tablet */
+@media screen and (max-width: 768px) {
+    .brand{
+        font-size: 1em;
+    }
+    nav>ul{
+        width: 50%;
+    }
+
+    nav>ul>li>a{
+        font-size: 1em;
+    }
+
+
+    
+}
+
+@media screen and (max-width: 600px){
+    .brand{
+        font-size: 0.9em;
+    }
+
+    nav ul{
+        margin: 0;
+        position: absolute;
+        right:0;
+        top: 0;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: #222222;
+        width: 70%;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+        z-index: 0;
+    }
+
+    nav ul.slide{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .humberg{
+        display: flex;
+    }
+}
